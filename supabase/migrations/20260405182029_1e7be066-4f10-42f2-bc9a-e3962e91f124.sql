@@ -1,0 +1,1 @@
+UPDATE products SET promo_video = 'https://guqhdtcvkhusjsxcbnwj.supabase.co/storage/v1/object/public/product-images/promo/generated/019d5edb-3c5b-7c53-a6b2-413b9cc6d9c6-1775412992973.mp4' WHERE id = 'b5908c93-97f8-467a-aee6-bf4a3c1eeaf1';

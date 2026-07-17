@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  touch-action: pan-x pan-y;
+  scroll-behavior: smooth;
+}
+
+/* Theme transition — only on elements that actually change theme colors */
+body, .bg-background, .bg-secondary, .bg-card, .bg-popover, .bg-accent, .bg-muted,
+header, footer, nav, .glass, .overlay-menu {
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  :root {
+    --background: 38 30% 95%;
+    --foreground: 30 10% 12%;
+
+    --card: 38 30% 95%;
+    --card-foreground: 30 10% 12%;
+
+    --popover: 40 32% 96%;
+    --popover-foreground: 30 10% 12%;
+
+    --primary: 30 10% 12%;
+    --primary-foreground: 40 20% 98%;
+
+    --secondary: 35 18% 95%;
+    --secondary-foreground: 30 10% 12%;
+
+    --muted: 35 12% 93%;
+    --muted-foreground: 30 5% 50%;
+
+    --accent: 32 30% 90%;
+    --accent-foreground: 30 10% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 30 10% 12%;
+
+    --radius: 0px;
+
+    --champagne: 35 25% 96%;
+    --champagne-dark: 35 20% 90%;
+
+    --sidebar-background: 40 15% 97%;
+    --sidebar-foreground: 30 10% 12%;
+    --sidebar-primary: 30 10% 12%;
+    --sidebar-primary-foreground: 40 20% 98%;
+    --sidebar-accent: 35 18% 95%;
+    --sidebar-accent-foreground: 30 10% 12%;
+    --sidebar-border: 35 15% 88%;
+    --sidebar-ring: 30 10% 12%;
+  }
+
+  .dark {
+    --background: 30 8% 6%;
+    --foreground: 35 15% 92%;
+
+    --card: 30 8% 8%;
+    --card-foreground: 35 15% 92%;
+
+    --popover: 30 8% 8%;
+    --popover-foreground: 35 15% 92%;
+
+    --primary: 35 15% 92%;
+    --primary-foreground: 30 8% 6%;
+
+    --secondary: 30 6% 12%;
+    --secondary-foreground: 35 15% 92%;
+
+    --muted: 30 6% 14%;
+    --muted-foreground: 35 8% 50%;
+
+    --accent: 32 10% 16%;
+    --accent-foreground: 35 15% 92%;
+
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 35 15% 92%;
+
+    --border: 30 6% 18%;
+    --input: 30 6% 18%;
+    --ring: 35 15% 80%;
+
+
+    --sidebar-background: 30 8% 8%;
+    --sidebar-foreground: 35 15% 92%;
+    --sidebar-primary: 35 15% 92%;
+    --sidebar-primary-foreground: 30 8% 6%;
+    --sidebar-accent: 30 6% 12%;
+    --sidebar-accent-foreground: 35 15% 92%;
+    --sidebar-border: 30 6% 18%;
+    --sidebar-ring: 35 15% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Admin panel — forced dark */
+  .admin-dark {
+    --admin-bg: 220 10% 6%;
+    --admin-surface: 220 8% 10%;
+    --admin-surface-hover: 220 8% 14%;
+    --admin-border: 220 6% 16%;
+    --admin-text: 220 10% 88%;
+    --admin-text-muted: 220 6% 48%;
+    --admin-accent: 220 80% 60%;
+    --admin-accent-soft: 220 60% 14%;
+    --admin-success: 142 60% 45%;
+    --admin-warning: 38 90% 55%;
+    --admin-danger: 0 70% 55%;
+  }
+
+  /* Admin dark mode heading override */
+  .admin-dark h1, .admin-dark h2, .admin-dark h3, .admin-dark h4 {
+    font-family: 'Outfit', sans-serif;
+  }
+
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  ::selection {
+    background: hsl(var(--foreground) / 0.1);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .btn-editorial {
+    @apply inline-flex items-center justify-center px-10 py-3.5 border border-foreground bg-transparent text-foreground font-sans text-[11px] tracking-[0.25em] uppercase transition-all duration-500 ease-out;
+  }
+  .btn-editorial:hover {
+    @apply bg-foreground text-background;
+    letter-spacing: 0.3em;
+  }
+
+  .btn-editorial-filled {
+    @apply inline-flex items-center justify-center px-10 py-3.5 border border-foreground bg-foreground text-background font-sans text-[11px] tracking-[0.25em] uppercase transition-all duration-500 ease-out;
+  }
+  .btn-editorial-filled:hover {
+    @apply bg-transparent text-foreground;
+    letter-spacing: 0.3em;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-10 py-3.5 border border-foreground bg-foreground text-background font-sans text-[11px] tracking-[0.25em] uppercase transition-all duration-500 ease-out;
+  }
+  .btn-gold:hover {
+    @apply bg-transparent text-foreground;
+    letter-spacing: 0.3em;
+  }
+
+  .container-editorial {
+    @apply w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .thin-border {
+    @apply border border-border;
+  }
+
+  .overlay-menu {
+    @apply fixed inset-0 z-50 bg-background flex flex-col items-center justify-center;
+  }
+
+  .glass {
+    background: hsl(var(--background) / 0.95);
+  }
+
+  /* Decorative line */
+  .line-accent {
+    @apply w-12 h-px mx-auto bg-foreground/20;
+  }
+
+  /* Premium input */
+  .input-premium {
+    @apply w-full bg-transparent border border-border px-5 py-3.5 text-sm font-sans outline-none transition-all duration-300;
+  }
+  .input-premium:focus {
+    border-color: hsl(var(--foreground));
+    box-shadow: 0 0 0 1px hsl(var(--foreground) / 0.05);
+  }
+
+  /* Label style */
+  .label-premium {
+    @apply text-[10px] tracking-[0.2em] uppercase text-muted-foreground font-sans block mb-2.5 font-medium;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+  }
+  .font-sans {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .safe-area-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .text-gold-gradient {
+    @apply text-foreground;
+  }
+}

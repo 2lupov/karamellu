@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /checkout
+Disallow: /order-success
+
+Sitemap: https://karamellu.org/sitemap.xml

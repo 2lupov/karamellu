@@ -1,0 +1,27 @@
+project_id = "guqhdtcvkhusjsxcbnwj"
+
+[functions]
+  [functions.auth-email-hook]
+    verify_jwt = false
+  [functions.process-email-queue]
+    verify_jwt = true
+  [functions.telegram-bot-webhook]
+    verify_jwt = false
+  [functions.telegram-verify-code]
+    verify_jwt = false
+  [functions.notify-admin-telegram]
+    verify_jwt = false
+  [functions.create-monobank-invoice]
+    verify_jwt = false
+  [functions.generate-promo-video]
+    verify_jwt = false
+  [functions.nova-poshta-search]
+    verify_jwt = false
+  [functions.orders-bot-notify]
+    verify_jwt = false
+  [functions.create-cod-order]
+    verify_jwt = false
+  [functions.orders-bot-webhook]
+    verify_jwt = false
+  [functions.create-booking]
+    verify_jwt = false

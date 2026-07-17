@@ -1,0 +1,1 @@
+UPDATE products SET promo_photo = 'https://guqhdtcvkhusjsxcbnwj.supabase.co/storage/v1/object/public/product-images/promo/violet-conditioner-promo.jpg' WHERE id = 'b5908c93-97f8-467a-aee6-bf4a3c1eeaf1';
