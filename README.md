@@ -1,73 +1,85 @@
-# Welcome to your Lovable project
+# Карамель LU — Мобільний та Веб-додаток
 
-## Project info
+Офіційний веб-сайт та мобільні додатки (iOS/Android) для студії краси та магазину професійної розкішної косметики **Карамель LU** (м. Хмельницький, Україна).
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Проект поєднує в собі публічну вітрину товарів, систему лояльності для клієнтів, онлайн-запис на послуги студії та розширену адмін-панель для управління спільним каталогом товарів між мережею магазинів ("Підземка" та "Салон").
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Функціонал проекту
 
-**Use Lovable**
+### Клієнтська частина (Веб та Мобільні додатки)
+- **Каталог товарів:** Фільтрація за категоріями та типами шкіри, швидкий пошук, детальні сторінки продуктів.
+- **Кошик та замовлення:** Інтегроване оформлення замовлення з підтримкою доставки (Нова Пошта) та оплати.
+- **Онлайн-запис (Бронювання):** Вибір послуги, майстра, дати та часу запису до студії краси.
+- **Клуб лояльності (LU Клуб):** Особистий кабінет клієнта, накопичення бонусів та інформація про спеціальні пропозиції.
+- **ШІ-консультант:** Персоналізований підбір косметики на основі штучного інтелекту.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### Панель адміністратора (`/admin`)
+- **Швидкий AI-сканер товарів:** Сканування штрих-коду апаратним сканером або камерою з автоматичним розпізнаванням товару ШІ та додаванням у базу даних.
+- **Спільна база та роздільний інвентар:** Єдина база товарів (`catalog_products`), але унікальні залишки, ціни та закупівля для кожного окремого магазину ("Підземка" та "Салон").
+- **Управління записами та послугами:** Адміністрування розкладу майстрів та заявок клієнтів.
+- **Статистика та інвентаризація:** Аналітика залишків на складах.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🛠 Технологічний стек
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend:** React 18, Vite, TypeScript, Tailwind CSS, shadcn-ui, Framer Motion (для плавної анімації інтерфейсу).
+- **Backend / База даних:** Supabase (PostgreSQL, RLS політики безпеки, Edge Functions на Deno).
+- **Мобільні платформи:** Capacitor (загортання веб-коду у повністю нативні додатки для iOS та Android).
+- **Хостинг та DNS:** Cloudflare (Cloudflare Pages для швидкої роздачі та автооновлення веб-версії, Cloudflare DNS для власного домену).
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 💻 Локальний запуск
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 1. Встановлення залежностей
+```bash
+npm install --legacy-peer-deps
 ```
 
-**Edit a file directly in GitHub**
+### 2. Запуск сервера розробки (прев'ю)
+```bash
+npm run dev
+```
+Сайт буде доступний за адресою: `http://localhost:8081` (або `http://localhost:8080`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. Збірка веб-версії
+```bash
+npm run build
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📱 Запуск на мобільних пристроях (Capacitor)
 
-## What technologies are used for this project?
+Перед запуском переконайтеся, що ви виконали збірку веб-версії (`npm run build`).
 
-This project is built with:
+### 1. Синхронізація веб-коду з мобільними проектами
+```bash
+npm run cap:sync
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 2. Запуск проекту в Xcode (для iOS)
+```bash
+npm run cap:open-ios
+```
 
-## How can I deploy this project?
+### 3. Запуск проекту в Android Studio (для Android)
+```bash
+npm run cap:open-android
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 📄 Налаштування власної бази Supabase та імпорт даних
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. Запустіть міграції на новому Supabase проекті за допомогою Supabase CLI:
+   ```bash
+   supabase db push
+   ```
+2. Для перенесення всіх 287 фотографій товарів та імпорту таблиць з папки `db-export 2`, запустіть скрипт:
+   ```bash
+   NEW_SUPABASE_URL="https://ваш-проект.supabase.co" NEW_SUPABASE_SERVICE_ROLE_KEY="ваш-секретний-ключ" npx tsx ./scratch/import_db_and_photos.ts
+   ```
