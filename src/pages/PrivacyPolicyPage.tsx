@@ -5,7 +5,7 @@ import SEOHead from "@/components/SEOHead";
 const sections = [
   {
     title: "1. Загальні положення",
-    content: `Ця Політика конфіденційності визначає порядок збору, зберігання, використання та захисту персональних даних користувачів інтернет-магазину «Карамель LU» (далі — Сайт), розташованого за адресою karamellu.online.
+    content: `Ця Політика конфіденційності визначає порядок збору, зберігання, використання та захисту персональних даних користувачів інтернет-магазину «Карамель LU» (далі — Сайт), розташованого за адресою karamellu.net.
 
 Власником та оператором Сайту є ФОП «Карамель LU», м. Хмельницький, вул. Проскурівська, 49 (далі — Продавець).
 
@@ -89,7 +89,7 @@ const PrivacyPolicyPage = () => (
     <SEOHead
       title="Політика конфіденційності — Карамель LU"
       description="Політика конфіденційності інтернет-магазину Карамель LU. Інформація про збір, зберігання та захист персональних даних."
-      canonical="https://karamellu.online/privacy-policy"
+      canonical="https://karamellu.net/privacy-policy"
     />
     <div className="container-editorial section-padding max-w-3xl mx-auto">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

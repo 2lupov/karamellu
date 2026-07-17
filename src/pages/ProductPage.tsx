@@ -80,7 +80,7 @@ const ProductPage = () => {
       price: product.price,
       priceCurrency: "UAH",
       availability: "https://schema.org/InStock",
-      url: `https://karamellu.online/product/${product.id}`,
+      url: `https://karamellu.net/product/${product.id}`,
     },
     aggregateRating: product.reviewCount > 0
       ? { "@type": "AggregateRating", ratingValue: product.rating, reviewCount: product.reviewCount }
@@ -92,7 +92,7 @@ const ProductPage = () => {
       <SEOHead
         title={`${product.name} — ${product.brand} | Карамель LU`}
         description={product.description?.slice(0, 155) || `Купити ${product.name} від ${product.brand} в Карамель LU`}
-        canonical={`https://karamellu.online/product/${product.id}`}
+        canonical={`https://karamellu.net/product/${product.id}`}
         type="product"
         image={product.image}
       />

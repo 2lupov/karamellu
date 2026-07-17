@@ -5,7 +5,7 @@ import SEOHead from "@/components/SEOHead";
 const sections = [
   {
     title: "1. Загальні положення",
-    content: `Ці Умови використання (далі — Умови) регулюють відносини між ФОП «Карамель LU» (далі — Продавець) та будь-якою особою (далі — Покупець), яка використовує інтернет-магазин karamellu.online (далі — Сайт).
+    content: `Ці Умови використання (далі — Умови) регулюють відносини між ФОП «Карамель LU» (далі — Продавець) та будь-якою особою (далі — Покупець), яка використовує інтернет-магазин karamellu.net (далі — Сайт).
 
 Оформлюючи замовлення на Сайті, Покупець підтверджує згоду з цими Умовами. Якщо ви не згодні з будь-яким пунктом — будь ласка, утримайтесь від використання Сайту.
 
@@ -103,7 +103,7 @@ const TermsPage = () => (
     <SEOHead
       title="Умови використання — Карамель LU"
       description="Умови використання інтернет-магазину Карамель LU. Інформація про замовлення, оплату, доставку, повернення та обмін товарів."
-      canonical="https://karamellu.online/terms"
+      canonical="https://karamellu.net/terms"
     />
     <div className="container-editorial section-padding max-w-3xl mx-auto">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>

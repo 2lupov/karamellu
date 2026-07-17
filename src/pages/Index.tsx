@@ -22,7 +22,7 @@ const HomePage = () => {
       <SEOHead
         title="Карамель LU — Магазин розкішної косметики"
         description="Відкрийте найкращий розкішний догляд за шкірою, підібраний з любов'ю. Саме для Вас у Карамель LU."
-        canonical="https://karamellu.online/"
+        canonical="https://karamellu.net/"
       />
       <script
         type="application/ld+json"
@@ -30,10 +30,10 @@ const HomePage = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "@id": "https://karamellu.online/#business",
+            "@id": "https://karamellu.net/#business",
             name: "Карамель LU",
             description: "Студія краси та магазин професійної косметики у Хмельницькому.",
-            url: "https://karamellu.online",
+            url: "https://karamellu.net",
             telephone: "+380936283837",
             email: "karamellu.studio@gmail.com",
             image: "https://storage.googleapis.com/gpt-engineer-file-uploads/Pfgtd12cNIbb4AKhQZ7UZMjGFGL2/social-images/social-1775389654147-karamellu_fullnew_logo.webp",

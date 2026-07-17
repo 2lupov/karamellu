@@ -126,7 +126,7 @@ const ShopPage = () => {
       <SEOHead
         title={isBestsellers ? "Бестселери — Карамель LU" : "Магазин — Карамель LU"}
         description="Каталог розкішної косметики та засобів догляду за шкірою. Найкращі бренди зі всього світу в Карамель LU."
-        canonical={`https://karamellu.online/shop${isBestsellers ? "?filter=bestsellers" : ""}`}
+        canonical={`https://karamellu.net/shop${isBestsellers ? "?filter=bestsellers" : ""}`}
       />
 
       {/* Hero header with ambient bg */}

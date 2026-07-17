@@ -20,10 +20,10 @@ const ContactPage = () => {
   const contactJsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://karamellu.online/#business",
+    "@id": "https://karamellu.net/#business",
     name: settings.site_name,
     description: settings.about_text || "Студія краси та магазин професійної косметики у Хмельницькому.",
-    url: "https://karamellu.online/contact",
+    url: "https://karamellu.net/contact",
     telephone: settings.site_phone.replace(/\s/g, ""),
     email: settings.site_email,
     address: { "@type": "PostalAddress", streetAddress: "вул. Проскурівська, 49", addressLocality: "Хмельницький", postalCode: "29000", addressCountry: "UA" },
@@ -41,7 +41,7 @@ const ContactPage = () => {
 
   return (
     <main className="pt-20 md:pt-24">
-      <SEOHead title="Контакти — Карамель LU" description="Зв'яжіться з нами. Студія краси та магазин косметики Карамель LU у Хмельницькому." canonical="https://karamellu.online/contact" />
+      <SEOHead title="Контакти — Карамель LU" description="Зв'яжіться з нами. Студія краси та магазин косметики Карамель LU у Хмельницькому." canonical="https://karamellu.net/contact" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }} />
 
       <div className="container-editorial section-padding">
