@@ -132,8 +132,8 @@ CREATE TRIGGER update_shop_inventory_updated_at BEFORE UPDATE ON public.shop_inv
 
 -- 8. Seed shops + members
 INSERT INTO public.shops (name, slug, owner_user_id) VALUES
-  ('Підземка', 'pidzemka', '0dd6c534-38b5-41b8-8f2f-8764558312be'),
-  ('Салон', 'salon', '0dd6c534-38b5-41b8-8f2f-8764558312be');
+  ('Підземка', 'pidzemka', NULL),
+  ('Салон', 'salon', NULL);
 
 INSERT INTO public.shop_members (shop_id, user_id, role)
 SELECT s.id, ur.user_id, 'owner'::public.shop_role
